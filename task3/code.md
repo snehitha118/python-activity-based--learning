@@ -22,7 +22,7 @@ Algorithm:
 
 10. ``` mermaid
 
-11. flowchart TD
+    flowchart TD
     A([START]) --> B[/Enter shopping budget/]
     B --> C[/Enter number of products/]
     C --> D[Initialize total cost = 0]
@@ -44,7 +44,7 @@ Algorithm:
     N --> Q[Display final cost and remaining budget]
     Q --> R([END])
 
-    ```
+```
 
     Sample input:
 
