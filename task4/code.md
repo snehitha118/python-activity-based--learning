@@ -20,7 +20,50 @@ Algorithm:
 12. Display the vehicle category, parking duration, and total fee.
 13. Stop the program.
 
-14.
+```mermaid
+flowchart TD
+    A([Start]) --> B[Print SMART PARKING FEE MANAGEMENT]
+    B --> C[/Enter vehicle category/]
+    C --> D[/Enter entry hour and exit hour/]
+    D --> E{Entry and exit hours valid?}
+
+    E -->|No| F[Print Invalid time input]
+    E -->|Yes| G{Exit time equals entry?}
+
+    G -->|Yes| H[Print Parking duration cannot be zero]
+    G -->|No| I{Vehicle is bike or car?}
+
+    I -->|No| J[Print Invalid vehicle category]
+    I -->|Yes| K{Exit time less than entry?}
+
+    K -->|Yes| L[Duration = 24 - entry + exit]
+    K -->|No| M[Duration = exit - entry]
+
+    L --> N[Print Parking Duration]
+    M --> N
+
+    N --> O{Vehicle is bike?}
+
+    O -->|Yes| P[Fee = Duration * 10<br/>Daily limit = 200]
+    O -->|No| Q[Fee = Duration * 20<br/>Daily limit = 400]
+
+    P --> R{Fee greater than daily limit?}
+    Q --> R
+
+    R -->|Yes| S[Fee = Daily limit]
+    R -->|No| T[Keep original fee]
+
+    S --> U[Print Vehicle Category and Total Fee]
+    T --> U
+
+    F --> V[Print Thank you]
+    H --> V
+    J --> V
+    U --> V
+
+    V --> W([End])
+```
+
 
 
     
