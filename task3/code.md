@@ -20,7 +20,7 @@ Algorithm:
 8. If the total cost is within the budget, display the shopping details.
 9. Otherwise, calculate the excess amount and determine the purchases that can be reduced.
 
-10. ```   mermaid
+10. ``` mermaid
 
 11. flowchart TD
     A([START]) --> B[/Enter shopping budget/]
