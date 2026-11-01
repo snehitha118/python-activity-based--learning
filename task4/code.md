@@ -20,18 +20,10 @@ Algorithm:
 12. Display the vehicle category, parking duration, and total fee.
 13. Stop the program.
 
-14. ``` mermaid
+14.
 
-flowchart TD
 
-    A([Start]) --> B[/Enter a number/]
-    B --> C{Number % 2 == 0?}
-    C -->|Yes| D[Print Even Number]
-    C -->|No| E[Print Odd Number]
-    D --> F([End])
-    E --> F
-    ```
-
+    
 Sample input:
 
 SMART PARKING FEE MANAGEMENT
