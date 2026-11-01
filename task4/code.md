@@ -22,59 +22,14 @@ Algorithm:
 
 14. ``` mermaid
 
-15.                   START
-                    |
-                    v
-          Input Vehicle Category
-                    |
-                    v
-          Input Entry and Exit Hours
-                    |
-                    v
-       Are hours between 0 and 23?
-               /          \
-             No            Yes
-             |              |
-             v              v
-      Display Invalid   Are Entry and
-        Time Input       Exit Equal?
-             |           /       \
-             |         Yes        No
-             |          |          |
-             |          v          v
-             |     Display Zero   Is Exit Time
-             |     Duration Error Less Than Entry?
-             |                   /       \
-             |                 Yes        No
-             |                  |          |
-             |                  v          v
-             |             Calculate    Calculate
-             |             Overnight    Normal
-             |             Duration     Duration
-             |                  \          /
-             |                   \        /
-             |                    v      v
-             |               Check Vehicle
-             |                 Category
-             |                /        \
-             |              Bike       Car
-             |               |          |
-             |               v          v
-             |          Calculate    Calculate
-             |          Bike Fee     Car Fee
-             |               \          /
-             |                \        /
-             |                 v      v
-             |             Apply Daily
-             |              Parking Limit
-             |                   |
-             |                   v
-             |          Display Parking Duration
-             |              and Total Fee
-             |                   |
-             v                   v
-                            END
-```
+flowchart TD
+    A([Start]) --> B[/Enter a number/]
+    B --> C{Number % 2 == 0?}
+    C -->|Yes| D[Print Even Number]
+    C -->|No| E[Print Odd Number]
+    D --> F([End])
+    E --> F
+    ```
 
 Sample input:
 
