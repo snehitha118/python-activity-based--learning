@@ -22,9 +22,7 @@ Step 8: Classify the result as Excellent, Good, or Needs Improvement.
 Step 9: Stop the program
 
 ``` mermaid
-
-3.Flowchart:
-
+flowchart TD
     A([START]) --> B[/Input marks for Test 1, Test 2, Test 3/]
     B --> C[Calculate average marks]
     C --> D[Compare marks of all tests]
@@ -39,6 +37,10 @@ Step 9: Stop the program
     J --> K([END])
 
 ```
+
+
+
+   
 
 4.Sample input:
 
