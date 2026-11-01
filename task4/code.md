@@ -23,6 +23,7 @@ Algorithm:
 14. ``` mermaid
 
 flowchart TD
+
     A([Start]) --> B[/Enter a number/]
     B --> C{Number % 2 == 0?}
     C -->|Yes| D[Print Even Number]
