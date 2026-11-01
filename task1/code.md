@@ -31,8 +31,10 @@ Display the performance analysis.
 
 Stop the program.
 
-``` mermaid
 3.Flowchart:
+
+```  mermaid
+
     A([START]) --> B[/Enter student name/]
     B --> C[/Enter number of subjects/]
     C --> D[Initialize total average and weak subjects]
