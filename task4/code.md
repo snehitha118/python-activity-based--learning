@@ -19,3 +19,77 @@ Algorithm:
 11. Calculate the final parking fee.
 12. Display the vehicle category, parking duration, and total fee.
 13. Stop the program.
+
+14. ``` mermaid
+
+15.                   START
+                    |
+                    v
+          Input Vehicle Category
+                    |
+                    v
+          Input Entry and Exit Hours
+                    |
+                    v
+       Are hours between 0 and 23?
+               /          \
+             No            Yes
+             |              |
+             v              v
+      Display Invalid   Are Entry and
+        Time Input       Exit Equal?
+             |           /       \
+             |         Yes        No
+             |          |          |
+             |          v          v
+             |     Display Zero   Is Exit Time
+             |     Duration Error Less Than Entry?
+             |                   /       \
+             |                 Yes        No
+             |                  |          |
+             |                  v          v
+             |             Calculate    Calculate
+             |             Overnight    Normal
+             |             Duration     Duration
+             |                  \          /
+             |                   \        /
+             |                    v      v
+             |               Check Vehicle
+             |                 Category
+             |                /        \
+             |              Bike       Car
+             |               |          |
+             |               v          v
+             |          Calculate    Calculate
+             |          Bike Fee     Car Fee
+             |               \          /
+             |                \        /
+             |                 v      v
+             |             Apply Daily
+             |              Parking Limit
+             |                   |
+             |                   v
+             |          Display Parking Duration
+             |              and Total Fee
+             |                   |
+             v                   v
+                            END
+```
+
+Sample input:
+
+SMART PARKING FEE MANAGEMENT
+
+Enter vehicle category (bike/car): car
+Enter entry hour (0-23): 20
+Enter exit hour (0-23): 5
+
+Sample output:
+
+SMART PARKING FEE MANAGEMENT
+
+Parking Duration: 9 hours
+Vehicle Category: car
+Total Parking Fee: Rs. 180
+
+Thank you!
