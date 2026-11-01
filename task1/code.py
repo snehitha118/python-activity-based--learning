@@ -2,29 +2,48 @@ print("STUDENT PERFORMANCE TREND ANALYSIS")
 
 name = input("Enter student name: ")
 
-marks1 = float(input("Enter marks in Test 1: "))
-marks2 = float(input("Enter marks in Test 2: "))
-marks3 = float(input("Enter marks in Test 3: "))
+n = int(input("Enter number of subjects: "))
 
-average = (marks1 + marks2 + marks3) / 3
+total_average = 0
+weak_subjects = 0
 
-print("\n----- PERFORMANCE REPORT -----")
+for i in range(n):
+    print("\nSubject", i + 1)
+
+    subject = input("Enter subject name: ")
+
+    test1 = float(input("Enter Test 1 marks: "))
+    test2 = float(input("Enter Test 2 marks: "))
+    test3 = float(input("Enter Test 3 marks: "))
+
+    average = (test1 + test2 + test3) / 3
+    total_average += average
+
+    print("Average marks:", round(average, 2))
+
+    if test3 > test1:
+        print("Performance: Improved")
+    elif test3 < test1:
+        print("Performance: Declined")
+    else:
+        print("Performance: No Change")
+
+    if test1 < 40 and test2 < 40 and test3 < 40:
+        print("Weak Subject:", subject)
+        weak_subjects += 1
+
+overall_average = total_average / n
+
+print("\n----- FINAL PERFORMANCE REPORT -----")
 print("Student Name:", name)
-print("Test 1 Marks:", marks1)
-print("Test 2 Marks:", marks2)
-print("Test 3 Marks:", marks3)
-print("Average Marks:", round(average, 2))
+print("Overall Average:", round(overall_average, 2))
+print("Weak Subjects:", weak_subjects)
 
-if marks3 > marks1:
-    print("Performance Trend: Improving")
-elif marks3 < marks1:
-    print("Performance Trend: Declining")
+if overall_average >= 75:
+    print("Student Classification: Excellent")
+elif overall_average >= 60:
+    print("Student Classification: Good")
+elif overall_average >= 40:
+    print("Student Classification: Average")
 else:
-    print("Performance Trend: Stable")
-
-if average >= 75:
-    print("Overall Result: Excellent")
-elif average >= 50:
-    print("Overall Result: Good")
-else:
-    print("Overall Result: Needs Improvement")
+    print("Student Classification: Needs Improvement")
