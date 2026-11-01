@@ -1,68 +1,103 @@
-1.	Problem Statement:
-The aim of this project is to analyze a student's performance in three tests. The program accepts the student's name and marks in three tests, calculates the average marks, identifies the performance trend as improving, declining, or stable, and displays the overall result.
+STUDENT PERFORMANCE TREND ANALYSIS
 
-2.Algorithm:
+1.Problem statement:
 
-Step 1: Start the program.
+Develop a Python program to analyze student performance by comparing their assessment scores across multiple examinations. The program should calculate the improvement or decline in marks, identify consistently weak subjects, and classify students based on their performance criteria.
 
-Step 2: Enter the student's name.
 
-Step 3: Enter marks in Test 1, Test 2, and Test 3.
+2. Algorithm:
 
-Step 4: Calculate the average marks.
+Start the program.
 
-Step 5: Display the student's name, marks, and average.
+Enter the student's name.
 
-Step 6: Compare Test 3 marks with Test 1 marks.
+Enter the number of subjects.
 
-Step 7: Display Improving, Declining, or Stable.
+Enter subject names and marks for three examinations.
 
-Step 8: Classify the result as Excellent, Good, or Needs Improvement.
+Calculate the average marks for each subject.
 
-Step 9: Stop the program
+Compare marks between the first and third examinations.
+
+Calculate the improvement or decline in marks.
+
+Identify subjects with consistently low marks.
+
+Calculate the overall average percentage.
+
+Classify the student based on the overall percentage.
+
+Display the performance analysis.
+
+Stop the program.
 
 ``` mermaid
-flowchart TD
-    A([START]) --> B[/Input marks for Test 1, Test 2, Test 3/]
-    B --> C[Calculate average marks]
-    C --> D[Compare marks of all tests]
-    D --> E{Are marks increasing?}
-    E -- Yes --> F[Display Improving Performance]
-    E -- No --> G{Are marks decreasing?}
-    G -- Yes --> H[Display Declining Performance]
-    G -- No --> I[Display Stable Performance]
-    F --> J[Display Average Marks]
-    H --> J
-    I --> J
-    J --> K([END])
+3.Flowchart:
+    A([START]) --> B[/Enter student name/]
+    B --> C[/Enter number of subjects/]
+    C --> D[Initialize total average and weak subjects]
+    D --> E[/Enter subject name and marks in 3 tests/]
+    E --> F[Calculate subject average]
+    F --> G{Test 3 > Test 1?}
+    G -- Yes --> H[Display Improved]
+    G -- No --> I{Test 3 < Test 1?}
+    I -- Yes --> J[Display Declined]
+    I -- No --> K[Display No Change]
+    H --> L{All 3 marks below 40?}
+    J --> L
+    K --> L
+    L -- Yes --> M[Identify weak subject]
+    L -- No --> N[Continue]
+    M --> N
+    N --> O{More subjects?}
+    O -- Yes --> E
+    O -- No --> P[Calculate overall average]
+    P --> Q{Average >= 75?}
+    Q -- Yes --> R[Excellent]
+    Q -- No --> S{Average >= 60?}
+    S -- Yes --> T[Good]
+    S -- No --> U{Average >= 40?}
+    U -- Yes --> V[Average]
+    U -- No --> W[Needs Improvement]
+    R --> X[Display final performance report]
+    T --> X
+    V --> X
+    W --> X
+    X --> Y([END])
 
 ```
 
-
-
-   
-
 4.Sample input:
 
-Enter marks for Test 1: 60
+Enter student name: Sita
+Enter number of subjects: 2
 
-Enter marks for Test 2: 70
+Subject 1
+Enter subject name: Python
+Enter Test 1 marks: 50
+Enter Test 2 marks: 65
+Enter Test 3 marks: 80
 
-Enter marks for Test 3: 80
+Subject 2
+Enter subject name: Maths
+Enter Test 1 marks: 30
+Enter Test 2 marks: 25
+Enter Test 3 marks: 20
 
 5.Sample output:
 
-Student Performance Trend Analysis
+STUDENT PERFORMANCE TREND ANALYSIS
 
-Test 1 Marks: 60
+Average marks: 65.0
+Performance: Improved
 
-Test 2 Marks: 70
+Average marks: 25.0
+Performance: Declined
+Weak Subject: Maths
 
-Test 3 Marks: 80
-
-Average Marks: 70.0
-
-Performance Trend: Improving
-
-
+----- FINAL PERFORMANCE REPORT -----
+Student Name: Sita
+Overall Average: 45.0
+Weak Subjects: 1
+Student Classification: Average
 
