@@ -1,3 +1,4 @@
+MULTI PRODUCT SHOPPING BUDGET CONSTRAINT
 Problem Statement:
 
 Develop a Python program to evaluate a shopping basket containing multiple products and their quantities. The program should calculate the total cost of products, apply discount conditions, compare the final amount with a fixed budget, and determine which purchases must be reduced to remain within the given budget.
