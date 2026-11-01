@@ -31,9 +31,10 @@ Display the performance analysis.
 
 Stop the program.
 
-3.Flowchart:
 
 ```  mermaid
+
+flowchart TD
 
     A([START]) --> B[/Enter student name/]
     B --> C[/Enter number of subjects/]
