@@ -1,43 +1,56 @@
+print("ATM TRANSACTION SIMULATION")
+
 initial_balance = float(input("Enter initial balance: "))
 withdrawal_limit = float(input("Enter withdrawal limit: "))
 
-transactions = [
-    ("deposit", 2000),
-    ("withdrawal", 1000),
-    ("withdrawal", 5000),
-    ("deposit", 0),
-    ("withdrawal", 500)
-]
+number_of_transactions = int(input("Enter number of transactions: "))
 
 successful_transactions = 0
 rejected_transactions = 0
 
-for transaction_type, amount in transactions:
-    print("\nTransaction:", transaction_type, amount)
+for i in range(number_of_transactions):
+
+    print("\nTransaction", i + 1)
+
+    transaction_type = input(
+        "Enter transaction type (deposit/withdrawal): "
+    ).lower()
+
+    amount = float(input("Enter amount: "))
 
     if amount <= 0:
-        print("Transaction rejected: Invalid amount")
+        print("Invalid amount")
         rejected_transactions += 1
 
     elif transaction_type == "deposit":
         initial_balance += amount
-        successful_transactions += 1
         print("Deposit successful")
+        successful_transactions += 1
 
     elif transaction_type == "withdrawal":
-        if amount <= initial_balance and amount <= withdrawal_limit:
-            initial_balance -= amount
-            successful_transactions += 1
-            print("Withdrawal successful")
-        else:
-            print("Transaction rejected: Limit or balance exceeded")
+
+        if amount > withdrawal_limit:
+            print("Withdrawal limit exceeded")
             rejected_transactions += 1
 
+        elif amount > initial_balance:
+            print("Insufficient balance")
+            rejected_transactions += 1
+
+        else:
+            initial_balance -= amount
+            print("Withdrawal successful")
+            successful_transactions += 1
+
     else:
-        print("Transaction rejected: Invalid transaction type")
+        print("Invalid transaction type")
         rejected_transactions += 1
 
-print("\n----- TRANSACTION SUMMARY -----")
-print("Successful transactions:", successful_transactions)
-print("Rejected transactions:", rejected_transactions)
-print("Final account balance:", round(initial_balance, 2))
+
+print("\n----- ATM TRANSACTION SUMMARY -----")
+
+print("Final Balance:", initial_balance)
+print("Successful Transactions:", successful_transactions)
+print("Rejected Transactions:", rejected_transactions)
+
+print("Thank you for using ATM")
